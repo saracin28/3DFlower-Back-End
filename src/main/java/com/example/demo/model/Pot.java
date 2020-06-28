@@ -26,7 +26,4 @@ public class Pot {
     @Column(name = "image")
     private String image;
 
-
-
-
 }
