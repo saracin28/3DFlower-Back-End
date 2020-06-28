@@ -57,6 +57,10 @@
             </exclusions>
         </dependency>
         <dependency>
+<<<<<<< HEAD
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+=======
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>LATEST</version>
@@ -65,6 +69,7 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>LATEST</version>
+>>>>>>> 15f12262446179fd00d30f033cf7027346e0d273
         </dependency>
     </dependencies>
 
