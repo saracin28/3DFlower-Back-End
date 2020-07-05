@@ -1,9 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Accessories;
-import com.example.demo.model.Flower;
 import com.example.demo.service.AccessoriesService;
-import com.example.demo.service.FlowerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +18,7 @@ public class AccessoriesController {
     private AccessoriesService accessoriesService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Accessories> getAllFlowers() {
+    public List<Accessories> getAllAccessories() {
         return accessoriesService.getAllAccessories();
     }
 
