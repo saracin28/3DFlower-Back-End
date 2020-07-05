@@ -12,7 +12,15 @@ public class PotService {
     @Autowired
     private PotRepository potRepository;
 
-    public List<Pot> getAllPots(){
-       return (List<Pot>) potRepository.findAll();
+    public List<Pot> getAllPots() {
+        return (List<Pot>) potRepository.findAll();
+    }
+
+    public void addPot(Pot pot) {
+        potRepository.save(pot);
+    }
+
+    public Pot updatePot(Pot pot) {
+        return potRepository.save(pot);
     }
 }
