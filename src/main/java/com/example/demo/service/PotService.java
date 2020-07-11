@@ -21,6 +21,13 @@ public class PotService {
     }
 
     public Pot updatePot(Pot pot) {
-        return potRepository.save(pot);
+        pot.setName(pot.getName());
+        pot.setPrice(pot.getPrice());
+        pot.setDescription(pot.getDescription());
+        potRepository.save(pot);
+        return pot;
+    }
+
+    public Pot getPotById(int pot) {return potRepository.findById(pot);
     }
 }

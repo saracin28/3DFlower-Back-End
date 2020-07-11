@@ -1,13 +1,11 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Flower;
+import com.example.demo.model.Pot;
 import com.example.demo.service.FlowerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,8 +25,13 @@ public class FlowerController {
         flowerService.addFlower(flower);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Flower updateFlower(@RequestBody Flower flower) {
-        return flowerService.updateFlower(flower);
+    @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE,value="/update", params = {"id"})
+    public Flower updateFlower(@RequestBody Flower flower, @RequestParam int id) {
+        return flowerService.updateFlower(flower,id);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Flower getFlowerById(@PathVariable("id") int id) {
+        return flowerService.getFlowerById(id);
     }
 }

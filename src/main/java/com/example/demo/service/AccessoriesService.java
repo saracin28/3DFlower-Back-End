@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.model.Accessories;
 
+import com.example.demo.model.Pot;
 import com.example.demo.repository.AccessoriesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,5 +25,8 @@ public class AccessoriesService {
 
     public List<Accessories> getAllAccessories() {
         return (List<Accessories>) accessoriesRepository.findAll();
+
+    }
+    public Accessories getAccessoriesById(int accessories) {return accessoriesRepository.findById(accessories);
     }
 }

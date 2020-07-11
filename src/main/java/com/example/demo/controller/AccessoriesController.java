@@ -1,13 +1,11 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Accessories;
+import com.example.demo.model.Pot;
 import com.example.demo.service.AccessoriesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,5 +28,10 @@ public class AccessoriesController {
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public Accessories updateAccessories(@RequestBody Accessories accessories) {
         return accessoriesService.updateAccessories(accessories);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Accessories getPotById(@PathVariable("id") int id) {
+        return accessoriesService.getAccessoriesById(id);
     }
 }
