@@ -4,10 +4,7 @@ import com.example.demo.model.Pot;
 import com.example.demo.service.PotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,5 +27,10 @@ public class PotController {
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public Pot updatePot(@RequestBody Pot pot) {
         return potService.updatePot(pot);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Pot getPotById(@PathVariable("id") int id) {
+        return potService.getPotById(id);
     }
 }

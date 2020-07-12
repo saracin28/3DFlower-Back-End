@@ -22,5 +22,5 @@ public class Flower {
     @Column(name = "description")
     private String description;
     @Column(name = "image")
-    private String image;
+    private Byte[] image;
 }

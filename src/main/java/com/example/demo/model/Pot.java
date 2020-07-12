@@ -1,12 +1,10 @@
 package com.example.demo.model;
-
-
-
+import com.mysql.cj.jdbc.Blob;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
+
 
 @Data
 @AllArgsConstructor
@@ -24,6 +22,6 @@ public class Pot {
     @Column(name = "description")
     private String description;
     @Column(name = "image")
-    private String image;
+    private Byte[] image;
 
 }
