@@ -1,7 +1,6 @@
 package com.example.demo.repository;
 
 import com.example.demo.model.Flower;
-import com.example.demo.model.Pot;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
