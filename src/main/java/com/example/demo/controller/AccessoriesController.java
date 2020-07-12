@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Accessories;
-import com.example.demo.model.Pot;
 import com.example.demo.service.AccessoriesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

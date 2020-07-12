@@ -22,6 +22,6 @@ public class Pot {
     @Column(name = "description")
     private String description;
     @Column(name = "image")
-    private Byte[] image;
+    private String image;
 
 }
