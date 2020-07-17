@@ -1,13 +1,11 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.Pot;
 import com.example.demo.model.User;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,6 +18,11 @@ public class UserController {
     @RequestMapping(method = RequestMethod.GET)
     public List<User> getAllUsers() {
         return userService.getAllUsers();
+    }
+
+    @RequestMapping(value = "/{name}", method = RequestMethod.GET)
+    public User getUserByName(@PathVariable("name") String name) {
+        return userService.getUserByName(name);
     }
 
     @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)

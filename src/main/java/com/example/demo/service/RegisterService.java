@@ -15,23 +15,11 @@ public class RegisterService {
     private UserRepository userRepository;
 
     public User addUser(RegisterDto registerDto) {
-        try {
-            arePasswordsEqual(registerDto.getPassword(), registerDto.getConfirmpassword());
             User user = new User();
             user.setUsername(registerDto.getUsername());
             user.setEmail(registerDto.getEmail());
             user.setPassword(registerDto.getPassword());
-           return userRepository.save(user);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
+            return userRepository.save(user);
     }
 
-    public boolean arePasswordsEqual(String password, String confirmPassword) throws SQLException {
-        if (!password.equals(confirmPassword)) {
-            throw new SQLException();
-        }
-        return true;
-    }
 }

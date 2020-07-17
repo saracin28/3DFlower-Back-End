@@ -13,7 +13,7 @@ public class WebConfigurer {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedMethods("GET")
+                        .allowedMethods("GET","POST")
                         .allowedOrigins("http://localhost:4200");
             }
         };
