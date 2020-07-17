@@ -16,8 +16,10 @@ public class RegisterController {
     @Autowired
     private RegisterService registerService;
 
+
     @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public User addUser(@RequestBody RegisterDto registerDto) {
         return registerService.addUser(registerDto);
     }
+
 }

@@ -1,8 +1,10 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -19,6 +21,14 @@ public class Cart {
     private String name;
     @Column(name="price")
     private int price;
-    @Column(name = "quantity")
-    private int quantity;
+    @Column(name = "description")
+    private String description;
+    @Column(name = "image")
+    private String image;
+
+    @ToString.Exclude
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name="user_id")
+    private User user;
 }
