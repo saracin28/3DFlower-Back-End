@@ -20,8 +20,8 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @RequestMapping(value = "/{name}", method = RequestMethod.GET)
-    public User getUserByName(@PathVariable("name") String name) {
+    @RequestMapping( method = RequestMethod.GET, params = {"name"})
+    public User getUserByName(@RequestParam String name) {
         return userService.getUserByName(name);
     }
 
@@ -33,5 +33,10 @@ public class UserController {
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public User updateUser(@RequestBody User user) {
         return userService.updateUser(user);
+    }
+
+    @RequestMapping(value ="/{id}", method = RequestMethod.GET)
+    public User getUserById(@PathVariable("id") int id) {
+        return userService.getUserById(id);
     }
 }
