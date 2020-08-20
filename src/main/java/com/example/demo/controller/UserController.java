@@ -39,4 +39,9 @@ public class UserController {
     public User getUserById(@PathVariable("id") int id) {
         return userService.getUserById(id);
     }
+
+    @RequestMapping( method = RequestMethod.GET, params = {"password"})
+    public User getUserByPassword(@RequestParam String password) {
+        return userService.getUserByPassword(password);
+    }
 }

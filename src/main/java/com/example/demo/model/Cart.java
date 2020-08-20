@@ -21,14 +21,12 @@ public class Cart {
     private String name;
     @Column(name="price")
     private int price;
+    @Column(name="quantity")
+    private int quantity;
     @Column(name = "description")
     private String description;
     @Column(name = "image")
     private String image;
-
-    @ToString.Exclude
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name="user_id")
-    private User user;
+    @Column(name="user_id")
+    private int user_id;
 }
