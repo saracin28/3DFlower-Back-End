@@ -33,6 +33,8 @@ public class UserService {
     public User getUserById(int id) {
         return userRepository.findById(id);
     }
-
+    public User getUserByPassword(String password) {
+        return userRepository.findByPassword(password);
+    }
 
 }
